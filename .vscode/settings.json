@@ -1,0 +1,5 @@
+{
+    "python.linting.pep8Enabled": true,
+    "python.linting.pep8Path": "C:/Prog/Anaconda/Scripts/pep8.exe",
+    "python.linting.pylintPath": "C:/Prog/Anaconda/Scripts/pylint.exe"
+}

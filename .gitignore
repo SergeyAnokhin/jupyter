@@ -2,3 +2,4 @@ __pycache__/*
 __pycache__/domain.cpython-36.pyc
 privateConfig.py
 .ipynb_checkpoints/*
+kaggle/titanic/.ipynb_checkpoints/*

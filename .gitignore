@@ -4,3 +4,4 @@ privateConfig.py
 .ipynb_checkpoints/*
 kaggle/titanic/.ipynb_checkpoints/*
 *-checkpoint.ipynb
+*/__pycache__/*

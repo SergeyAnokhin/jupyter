@@ -50,11 +50,23 @@ class CameraArchiveHelper:
     def get_files(self, config):
         files = []
         for root, dirnames, filenames in os.walk(config.path_from):
+            if self.dir_to_ignore(root, config.ignore_dir):
+                print('Ignore:', root)
+                continue
             for filename in filenames: #fnmatch.filter(filenames, '*.c'):
-                file = FileArchive(config, root, filename)
-                files.append(file)
+                try:
+                    file = FileArchive(config, root, filename)
+                    files.append(file)
+                except ValueError:
+                    print('FileArchive creation error')
         print('{} files found'.format(len(files)))
         return files
+
+    def dir_to_ignore(self, root: str, ignore_dir: []):
+        for dir in ignore_dir:
+            if dir in root:
+                return True
+        return False
 
     def move_files(self, files):
         common = CommonHelper()

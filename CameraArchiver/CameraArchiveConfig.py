@@ -7,6 +7,7 @@ class CameraArchiveConfig:
     camera: str
     path_from: str
     path_to: str
+    ignore_dir: []
 
     def fromJsonFile(self, filename: str):
         with open(filename, "r") as read_file:

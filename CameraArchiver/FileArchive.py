@@ -8,14 +8,20 @@ class FileArchive:
     frm: FileArchiveInfo
     to: FileArchiveInfo
 
-    def __init__(self, config: CameraArchiveConfig, root, filename):
+    def __init__(self, config: CameraArchiveConfig, root = '', filename = ''):
         self.config = config
+        if not root and not filename:
+            return
 
         full_filename = os.path.join(root, filename)
         self.frm = FileArchiveInfo(config, config.path_from, full_filename)
 
         full_filename = self.get_full_filename_to()
         self.to = FileArchiveInfo(config, config.path_to, full_filename)
+
+    def force_values(self, to: FileArchiveInfo, frm: FileArchiveInfo):
+        self.frm = frm
+        self.to = to
 
     def get_full_filename_to(self):
         dt = self.frm.get_datetime()

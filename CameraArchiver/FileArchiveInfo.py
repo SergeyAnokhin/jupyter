@@ -31,8 +31,10 @@ class FileArchiveInfo:
         return file_extension.replace('.', '')
 
     def get_datetime(self):
-        re_groups = re.search("(20\\d\\d)(\\d\\d)(\\d\\d)[_-]?(\\d\\d)(\\d\\d)(\\d\\d)", self.filename)
+        re_groups = re.search("(20\\d\\d)[_-]?(\\d\\d)[_-]?(\\d\\d)[_-]?(\\d\\d)[_-]?(\\d\\d)[_-]?(\\d\\d)", 
+            self.filename)
         if not re_groups:
+            print('Cant parse datetime in file : {}'.format(self.path))
             raise ValueError('Cant parse datetime in file : {}'.format(self.path))
         year = int(re_groups.group(1))
         month = int(re_groups.group(2))

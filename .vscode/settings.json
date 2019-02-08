@@ -4,6 +4,6 @@
     "python.linting.pylintPath": "C:/Prog/Anaconda/Scripts/pylint.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
-    "python.pythonPath": "C:\\progs\\Anaconda\\python.exe",
+    "python.pythonPath": "D:\\Progs\\Anaconda\\python.exe",
     "python.linting.pylamaEnabled": true
 }

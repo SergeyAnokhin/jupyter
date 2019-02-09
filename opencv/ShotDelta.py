@@ -2,7 +2,10 @@ import cv2
 import Shot
 import numpy as np
 
+
 class ShotDelta:
+    Contours: any
+
     def __init__(self, shot1: Shot, shot2: Shot):
         self.shot1 = shot1
         self.shot2 = shot2
@@ -27,11 +30,14 @@ class ShotDelta:
         return self.Contours
 
     def DrawContours(self, shot: Shot):
-        cv2.drawContours(shot.image, self.Contours, -1, (0, 255, 255), 1)
+        self.GetCountours()
+        cv2.drawContours(shot.image_color, self.Contours, -1, (0, 255, 255), 1)
         for c in self.Contours[0:2]:
             area = int(cv2.contourArea(c) / 100)
             print('Contour: {}'.format(area))
-                
+
             (x, y, w, h) = cv2.boundingRect(c)
-            cv2.rectangle(shot.image, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            cv2.putText(shot.image,str(area),(x,y-3), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(255,255,255),1,cv2.LINE_AA)   
+            cv2.rectangle(shot.image_color, (x, y),
+                          (x + w, y + h), (0, 255, 0), 2)
+            cv2.putText(shot.image_color, str(
+                area), (x, y-3), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1, cv2.LINE_AA)

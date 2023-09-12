@@ -1,9 +1,10 @@
 {
-    "python.linting.pep8Enabled": false,
-    "python.linting.pep8Path": "C:/Prog/Anaconda/Scripts/pep8.exe",
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.pycodestylePath": "C:/Prog/Anaconda/Scripts/pep8.exe",
     "python.linting.pylintPath": "C:/Prog/Anaconda/Scripts/pylint.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.pythonPath": "D:\\Progs\\Anaconda\\python.exe",
-    "python.linting.pylamaEnabled": true
+    "python.linting.pylamaEnabled": false,
+    "python.linting.mypyEnabled": true
 }

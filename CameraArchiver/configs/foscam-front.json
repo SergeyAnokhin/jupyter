@@ -1,6 +1,7 @@
 {
-    "path_from": "C:\\inetpub\\ftproot\\Camera\\Foscam\\FI9805W_C4D6553DECE1",
+    "path_from": "F:\\inetpub\\ftproot\\Camera\\Foscam\\FI9805W_C4D6553DECE1",
     "path_to": "\\\\diskstation\\CameraArchive\\Foscam",
+    "ignore_dir": [],
     "sensor": {
         "is_external": true,
         "unit": "bytes",

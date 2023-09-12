@@ -1,6 +1,7 @@
 {
-    "path_from": "C:\\inetpub\\ftproot\\Camera\\FoscamPlay\\FI9816P_00626E827A94",
+    "path_from": "F:\\inetpub\\ftproot\\Camera\\FoscamPlay\\FI9816P_00626E827A94",
     "path_to": "\\\\diskstation\\CameraArchive\\FoscamPlay",
+    "ignore_dir": [],
     "sensor": {
         "is_external": false,
         "unit": "bytes",

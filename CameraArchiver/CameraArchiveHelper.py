@@ -6,6 +6,10 @@ from elasticsearch import Elasticsearch
 from CameraArchiveConfig import CameraArchiveConfig
 from CommonHelper import CommonHelper
 
+import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 class CameraArchiveHelper:
 
@@ -31,9 +35,10 @@ class CameraArchiveHelper:
         }
         json_data = json.dumps(dict, indent=4, sort_keys=True)
         #print('{}@{}'.format(config.camera, file.to.get_timestamp_utc()), json_data)
-        es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
-        res = es.index(index="cameraarchive-" + file.to.get_month_id_utc(),
-                       doc_type='doc',
+        es = Elasticsearch(["https://elastic:PWD@localhost:3192"], 
+                    verify_certs=False) # api_key="=="
+        res = es.index(index="cameraarchive-" + file.to.get_year_id_utc(),
+                       doc_type='_doc',
                        body=json_data,
                        id='{}@{}'.format(config.camera, file.to.get_timestamp_utc()))
 

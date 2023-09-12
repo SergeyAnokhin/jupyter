@@ -1,6 +1,7 @@
 {
-    "path_from": "C:\\inetpub\\ftproot\\Camera\\FoscamHut\\FI9800P_00626E870C7B",
+    "path_from": "F:\\inetpub\\ftproot\\Camera\\FoscamHut\\FI9800P_00626E870C7B",
     "path_to": "\\\\diskstation\\CameraArchive\\FoscamHut",
+    "ignore_dir": [],
     "sensor": {
         "is_external": true,
         "unit": "bytes",

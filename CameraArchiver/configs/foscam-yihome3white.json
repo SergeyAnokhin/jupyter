@@ -1,0 +1,19 @@
+{
+    "path_from": "\\\\192.168.1.16\\Camera\\YiHome3White",
+    "path_to": "\\\\diskstation\\CameraArchive\\YiHome3White",
+    "ignore_dir": [],
+    "sensor": {
+        "is_external": false,
+        "unit": "bytes",
+        "id": "YiHome3WhiteArchive",
+        "type": "CameraArchive",
+        "device": "Yi Home 3",
+        "display": "White(2) cupboard"
+    },
+    "position": {
+        "floor": 2,
+        "room": "White",
+        "detail": "cupboard"
+    },
+    "camera": "YiHome3White"
+}

@@ -1,6 +1,7 @@
 {
-    "path_from": "C:\\inetpub\\ftproot\\Camera\\FoscamPTZ\\FI9828P_00626E68890F",
+    "path_from": "F:\\inetpub\\ftproot\\Camera\\FoscamPTZ\\FI9828P_00626E68890F",
     "path_to": "\\\\diskstation\\CameraArchive\\FoscamPTZ",
+    "ignore_dir": [],
     "sensor": {
         "is_external": true,
         "unit": "bytes",

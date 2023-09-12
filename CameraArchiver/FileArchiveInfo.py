@@ -31,11 +31,12 @@ class FileArchiveInfo:
         return file_extension.replace('.', '')
 
     def get_datetime(self):
-        re_groups = re.search("(20\\d\\d)[_-]?(\\d\\d)[_-]?(\\d\\d)[_-]?(\\d\\d)[_-]?(\\d\\d)[_-]?(\\d\\d)", 
-            self.filename)
+        datetime_pattern = "(20\\d\\d)[Y_-]?(\\d\\d)[M_-]?(\\d\\d)[D_-]?(\\d\\d)[H_-]?.?(\\d\\d)[M_-]?(\\d\\d)"
+        re_groups = re.search(datetime_pattern, self.filename)
         if not re_groups:
-            print('Cant parse datetime in file : {}'.format(self.path))
-            raise ValueError('Cant parse datetime in file : {}'.format(self.path))
+            error = f"Can't parse datetime in file : {self.path}. Pattern: {datetime_pattern}"
+            print(error)
+            raise ValueError(error)
         year = int(re_groups.group(1))
         month = int(re_groups.group(2))
         day = int(re_groups.group(3))
@@ -51,6 +52,9 @@ class FileArchiveInfo:
 
     def get_month_id_utc(self):
         return self.get_datetime_utc().strftime('%Y.%m')
+
+    def get_year_id_utc(self):
+        return self.get_datetime_utc().strftime('%Y')
 
     def get_timestamp(self): # 'MDAlarm_20190131-153706'
         return self.get_datetime().strftime('%Y-%m-%dT%H:%M:%S.000Z')
